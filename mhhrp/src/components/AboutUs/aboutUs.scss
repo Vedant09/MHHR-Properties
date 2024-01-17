@@ -1,0 +1,24 @@
+.about-us-component{
+ display: flex;
+}
+
+.info-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .header-container{
+        font-size: $font-size-xl;
+
+        .header{
+            
+        }
+    }
+
+    .content-container{
+        display: flex;
+        justify-content: center;
+        font-size: $font-size-m;
+
+    }
+}
