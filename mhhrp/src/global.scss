@@ -7,7 +7,5 @@
 @import "./assets/styles/common.scss";
 
 // components
-
-
-// containers
-@import "./containers/Home/home.scss";
+@import "./components/Home/home.scss";
+@import "./components/AboutUs/aboutUs.scss";
