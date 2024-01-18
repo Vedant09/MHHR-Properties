@@ -7,6 +7,7 @@ const AboutUsComponent = lazy(() => import('../components/AboutUs'));
 const ContactUsComponent = lazy(() => import('../components/ContactUs'))
 const NotFoundComponent = lazy(() => import('../components/PageNotFound'))
 const PropertyDetails = lazy(() => import('../components/PropertyDetails'));
+const PropertyForms = lazy(() => import('../components/PropertyForms'))
 
 const PublicRoutes = () => {
     return (
@@ -19,6 +20,7 @@ const PublicRoutes = () => {
 
                 <Route path="*" element={<NotFoundComponent />} />
                 <Route path={RoutePaths.propertyDetails} element={<PropertyDetails />} />
+                <Route path={RoutePaths.addPropertyForm} element={<PropertyForms />} />
             </Routes>
         </React.Suspense>
     );
