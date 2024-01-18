@@ -1,73 +1,94 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { TabsList } from "../../utils/properties";
+
 
 const PropertyContent = () => {
-  const [activeTab, setActiveTab] = useState('description'); // Initial active tab
+  const [activeTab, setActiveTab] = useState(TabsList.description); // Initial active tab
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
   };
 
   return (
-    <div className='content-tabs'>
-      
-      <div className='tabs'>
-        <div className={`tab ${activeTab === 'description' ? 'active' : ''}`} onClick={() => handleTabClick('description')}>
-          Description
+    <div className="content-tabs">
+      <div className="tabs">
+        <div
+          className={`tab ${activeTab === TabsList.description && "active"}`}
+          onClick={() => handleTabClick(TabsList.description)}
+        >
+         { TabsList.description}
         </div>
-        <div className={`tab ${activeTab === 'utilities' ? 'active' : ''}`} onClick={() => handleTabClick('utilities')}>
-          Utilities
+        <div
+          className={`tab ${activeTab === TabsList.utilities && "active"}`}
+          onClick={() => handleTabClick(TabsList.utilities)}
+        >
+          {TabsList.utilities}
         </div>
-        <div className={`tab ${activeTab === 'appliances' ? 'active' : ''}`} onClick={() => handleTabClick('appliances')}>
-          Appliances
+        <div
+          className={`tab ${activeTab === TabsList.appliances && "active"}`}
+          onClick={() => handleTabClick(TabsList.appliances)}
+        >
+          {TabsList.appliances}
         </div>
-        <div className={`tab ${activeTab === 'features' ? 'active' : ''}`} onClick={() => handleTabClick('features')}>
-          Features
+        <div
+          className={`tab ${activeTab === TabsList.features && "active"}`}
+          onClick={() => handleTabClick(TabsList.features)}
+        >
+          {TabsList.features}
         </div>
-        <div className={`tab ${activeTab === 'amenities' ? 'active' : ''}`} onClick={() => handleTabClick('amenities')}>
-          Amenities
+        <div
+          className={`tab ${activeTab === TabsList.amenities && "active"}`}
+          onClick={() => handleTabClick(TabsList.amenities)}
+        >
+          {TabsList.amenities}
         </div>
-        <div className={`tab ${activeTab === 'other' ? 'active' : ''}`} onClick={() => handleTabClick('other')}>
-          Other
+        <div
+          className={`tab ${activeTab === TabsList.others && "active"}`}
+          onClick={() => handleTabClick(TabsList.others)}
+        >
+          {TabsList.others}
         </div>
       </div>
 
-    
-      <div className='tab-content'>
-        {activeTab === 'description' && (
+      <div className="tab-content">
+        {activeTab === "description" && (
           <div>
             <h1>Description Tab Content</h1>
             {/* Add your description content here */}
           </div>
         )}
-        {activeTab === 'utilities' && (
+        {activeTab === "utilities" && (
           <div>
             <h1>Utilities Tab Content</h1>
             {/* Add your utilities content here */}
           </div>
         )}
-        {activeTab === 'appliances' && (
+        {activeTab === "appliances" && (
           <div>
             <h1>Appliances Tab Content</h1>
             {/* Add your appliances content here */}
           </div>
         )}
-        {activeTab === 'features' && (
+        {activeTab === "features" && (
           <div>
             <h1>Features Tab Content</h1>
             {/* Add your features content here */}
           </div>
         )}
-        {activeTab === 'amenities' && (
+        {activeTab === "amenities" && (
           <div>
             <h1>Amenities Tab Content</h1>
             {/* Add your amenities content here */}
           </div>
         )}
-        {activeTab === 'other' && (
+        {activeTab === "other" && (
           <div>
             <h1>Other Tab Content</h1>
-            <p>Our maintenance team is available around the clock to handle any issues that may arise. 
-                We prioritize quick and efficient service to minimize any inconvenience to you or your tenants.</p>
+            <p>
+              Our maintenance team is available around the clock to handle any
+              issues that may arise. We prioritize quick and efficient service
+              to minimize any inconvenience to you or your tenants.
+            </p>
           </div>
         )}
       </div>
