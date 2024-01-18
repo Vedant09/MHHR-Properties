@@ -66,7 +66,8 @@ const PropertyContent = () => {
         {activeTab === 'other' && (
           <div>
             <h1>Other Tab Content</h1>
-            {/* Add your other content here */}
+            <p>Our maintenance team is available around the clock to handle any issues that may arise. 
+                We prioritize quick and efficient service to minimize any inconvenience to you or your tenants.</p>
           </div>
         )}
       </div>
