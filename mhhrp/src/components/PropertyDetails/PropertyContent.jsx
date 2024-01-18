@@ -9,7 +9,7 @@ const PropertyContent = () => {
 
   return (
     <div className='content-tabs'>
-      {/* Tabs */}
+      
       <div className='tabs'>
         <div className={`tab ${activeTab === 'description' ? 'active' : ''}`} onClick={() => handleTabClick('description')}>
           Description
@@ -31,7 +31,7 @@ const PropertyContent = () => {
         </div>
       </div>
 
-      {/* Tab Content */}
+    
       <div className='tab-content'>
         {activeTab === 'description' && (
           <div>

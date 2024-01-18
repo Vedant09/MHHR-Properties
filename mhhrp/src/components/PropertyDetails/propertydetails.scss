@@ -9,14 +9,14 @@
 }
 
 .property-images{
-    background-color: aliceblue;
+    // background-color: aliceblue;
     width: 52%;
     height: 100%;
     border-radius: 10px;
 }
 
 .property-info{
-    height: 100%;
+    height: 90%;
     width: 40%;
 }
 
@@ -70,6 +70,7 @@
         width: fit-content;
         padding: 1%;
         background-color: white;
+        border-radius: 8px;
     }
     .tab-content{
         width: 100%;
