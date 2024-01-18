@@ -1,13 +1,33 @@
-import React from 'react'
-import AboutUs from "../AboutUs/index";
+import React from "react";
+// import AboutUs from "../AboutUs/index";
+import { HomeBackground } from "../../assets/images";
+import Footer from "../Footer";
+import OutlinedButton from "../common/Button";
 
-const index = () => {
+const Home = () => {
   return (
-    <div>
-     <p>Home</p>
-     <AboutUs />
-    </div>
-  )
-}
+    <div className="home-container">
+      <div className="image-background-container">
+        <img
+          className="background-image"
+          src={HomeBackground}
+          alt="background"
+        />
 
-export default index
+        <div className="image-content-overlay">
+          <div className="header">Find Your Dream Home</div>
+          <div className="content">
+            {" "}
+            Secure and hassle-free property rentals{" "}
+          </div>
+          <OutlinedButton btnTitle="Contact Us" />
+        </div>
+      </div>
+
+      {/* <AboutUs /> */}
+      <Footer />
+    </div>
+  );
+};
+
+export default Home;
