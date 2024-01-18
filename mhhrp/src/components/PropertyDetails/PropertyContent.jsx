@@ -51,37 +51,37 @@ const PropertyContent = () => {
       </div>
 
       <div className="tab-content">
-        {activeTab === "description" && (
+        {activeTab === TabsList.description && (
           <div>
             <h1>Description Tab Content</h1>
             {/* Add your description content here */}
           </div>
         )}
-        {activeTab === "utilities" && (
+        {activeTab === TabsList.utilities && (
           <div>
             <h1>Utilities Tab Content</h1>
             {/* Add your utilities content here */}
           </div>
         )}
-        {activeTab === "appliances" && (
+        {activeTab === TabsList.appliances && (
           <div>
             <h1>Appliances Tab Content</h1>
             {/* Add your appliances content here */}
           </div>
         )}
-        {activeTab === "features" && (
+        {activeTab === TabsList.features && (
           <div>
             <h1>Features Tab Content</h1>
             {/* Add your features content here */}
           </div>
         )}
-        {activeTab === "amenities" && (
+        {activeTab === TabsList.amenities && (
           <div>
             <h1>Amenities Tab Content</h1>
             {/* Add your amenities content here */}
           </div>
         )}
-        {activeTab === "other" && (
+        {activeTab === TabsList.others && (
           <div>
             <h1>Other Tab Content</h1>
             <p>
