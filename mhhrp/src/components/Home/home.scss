@@ -6,7 +6,7 @@
     .image-background-container {
         width: 100%;
         position: relative;
-        height: 80%;
+        height: 50%;
         overflow: hidden;
 
         .background-image {
@@ -19,7 +19,6 @@
 
     .image-content-overlay{
         position: absolute;
-        // height: 80%;
         top: 35%;
         left: 0;
         width: calc(100% - 100px);

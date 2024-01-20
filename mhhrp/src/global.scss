@@ -12,9 +12,10 @@
 @import "./components/Footer/footer.scss";
 @import "./components/ContactUs/contact-us.scss";
 @import "./components/Information/information.scss";
-
-// common components
-@import "./components/common/Button/button.scss";
 @import "./components/PropertyDetails/propertydetails.scss";
 @import "./components/PropertyForms/propertyforms.scss";
 @import "./components/PropertyLists/list.scss";
+@import "./components/Header/header.scss";
+
+// common components
+@import "./components/common/Button/button.scss";

@@ -27,7 +27,6 @@ const Home = () => {
 
       <Information />
       
-      {/* <AboutUs /> */}
       <Footer />
     </div>
   );
