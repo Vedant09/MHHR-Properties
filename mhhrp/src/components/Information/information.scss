@@ -8,7 +8,7 @@
 
         .header {
             font-size: $font-size-xl;
-            font-weight: $font-weight-bold;
+            // font-weight: $font-weight-bold;
             padding-bottom: 25px;
             border-bottom: 1px solid $gray;
         }
@@ -46,7 +46,7 @@
 
                 .info-header {
                     font-size: $font-size-l;
-                    font-weight: $font-weight-bold;
+                    font-weight: 400;
                 }
             }
 

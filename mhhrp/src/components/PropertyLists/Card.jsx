@@ -7,12 +7,8 @@ import { NavLink } from "react-router-dom";
 import { RoutePaths } from "../../utils/routes";
 
 export default function Card(props) {
-  let badgeText;
-  if (props.item.available) {
-    badgeText = "AVAILABLE";
-  } else {
-    badgeText = "SOLD OUT";
-  }
+
+  const badgeText = props.item.available ? "AVAILABLE" : "SOLD OUT";
   const styles = { color: props.item.available ? "#008000" : "#FF0000" };
 
   return (
@@ -44,7 +40,6 @@ export default function Card(props) {
         {/* <button className="button-comp">More Info</button> */}
         <NavLink to={RoutePaths.propertyDetails} className="card-nav-link">
           <OutlinedButton btnTitle="More Info" className="button-comp" />
-          {/* More Info */}
         </NavLink>
       </div>
     </div>
