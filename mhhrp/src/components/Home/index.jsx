@@ -3,6 +3,7 @@ import React from "react";
 import { HomeBackground } from "../../assets/images";
 import Footer from "../Footer";
 import OutlinedButton from "../common/Button";
+import Information from "../Information";
 
 const Home = () => {
   return (
@@ -24,6 +25,8 @@ const Home = () => {
         </div>
       </div>
 
+      <Information />
+      
       {/* <AboutUs /> */}
       <Footer />
     </div>

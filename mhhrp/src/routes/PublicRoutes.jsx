@@ -1,6 +1,6 @@
 import React, { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
-// import { RoutePaths } from "../utils/routes";
+import { RoutePaths } from "../utils/routes";
 
 const HomeComponent = lazy(() => import('../components/Home'));
 const AboutUsComponent = lazy(() => import('../components/AboutUs'));
@@ -13,8 +13,8 @@ const PublicRoutes = () => {
             <Routes>
                 <Route path={'/'} element={<HomeComponent />} />
                 {/* <Route path={RoutePaths.home} element={<HomeComponent />} /> */}
-                <Route path={'/about-us'} element={<AboutUsComponent />} />
-                <Route path={'/contact-us'} element={<ContactUsComponent />} />
+                <Route path={RoutePaths.aboutUs} element={<AboutUsComponent />} />
+                <Route path={RoutePaths.contactUs} element={<ContactUsComponent />} />
 
                 <Route path="*" element={<NotFoundComponent />} />
             </Routes>
