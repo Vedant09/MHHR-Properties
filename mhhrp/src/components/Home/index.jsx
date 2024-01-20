@@ -4,6 +4,8 @@ import { HomeBackground } from "../../assets/images";
 import Footer from "../Footer";
 import OutlinedButton from "../common/Button";
 import Information from "../Information";
+import { NavLink } from "react-router-dom";
+import { RoutePaths } from "../../utils/routes";
 
 const Home = () => {
   return (
@@ -21,12 +23,14 @@ const Home = () => {
             {" "}
             Secure and hassle-free property rentals{" "}
           </div>
-          <OutlinedButton btnTitle="Contact Us" />
+          <NavLink to={RoutePaths.contactUs} className="contact-nav-link">
+            <OutlinedButton btnTitle="Contact Us" />
+          </NavLink>
         </div>
       </div>
 
       <Information />
-      
+
       <Footer />
     </div>
   );
