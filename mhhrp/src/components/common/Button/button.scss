@@ -1,0 +1,12 @@
+.outline-button{
+    width: 150px;
+    font-size: $font-size-l;
+    padding: 7.5px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    border: 2px solid $white;
+    margin-top: 15px;
+    cursor: pointer;
+}
