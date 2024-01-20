@@ -1,6 +1,6 @@
 nav {
     height: 70px;
-    display:flex;
+    display: flex;
     justify-content: center;
     padding: 20px 36px;
     align-items: center;
@@ -8,23 +8,25 @@ nav {
     box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.1);
 }
 
-.navtext{
+.navtext {
     color: #FFFCF2;
     font-family: Roboto Serif;
     font-size: 36px;
     font-style: normal;
     font-weight: 700;
 }
+
 .cards-list {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     gap: 30px;
-    overflow-y: auto; 
+    overflow-y: auto;
     justify-content: center;
     padding-left: 25%;
     padding-right: 25%;
     padding-top: 30px;
 }
+
 .card--badge {
     position: absolute !important;
     top: 6px;
@@ -34,7 +36,8 @@ nav {
     border-radius: 5px;
     font-weight: bold;
 }
-.card{
+
+.card {
     display: flex;
     background-color: #cce1f0;
     height: 200px;
@@ -42,32 +45,40 @@ nav {
     position: relative;
 
 }
+
 .card:hover {
-    transform: scale(1.05); /* Slightly increase size */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for pop up effect */
+    transform: scale(1.05);
+    /* Slightly increase size */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Add shadow for pop up effect */
 }
-.card--image{
+
+.card--image {
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
 }
-.card--stats{
+
+.card--stats {
     margin-right: auto;
     padding-left: 15px;
     overflow: hidden;
 }
-.card--title{
+
+.card--title {
     color: #05294b;
     font-weight: bold;
     font-size: 25px;
 }
-.card--info{
+
+.card--info {
     margin-top: 5px;
 }
+
 .card--icon {
     height: 20px;
 }
 
-.card-button{
+.card-button {
     display: flex;
     flex-direction: column;
     padding-right: 20px;
@@ -76,29 +87,34 @@ nav {
     padding-bottom: 10px;
 
 }
-.card--price{
+
+.card--price {
     color: #05294b;
     font-weight: bold;
     font-size: 25px;
-    
+
 }
-.per-month{
+
+.per-month {
     color: #05294b;
     font-size: 20px;
 }
-.button-comp{
+
+.button-comp {
     margin-top: 5px;
-	color: white !important;
-	border-radius: 60px !important;
-	border: 1px solid #000 !important ;
-	background-color: #140E38 !important;
-	width: 158px; 
+    // color: white !important;
+    // border-radius: 60px !important;
+    // border: 1px solid #000 !important ;
+    // background-color: #140E38 !important;
+    width: 158px;
     height: 50px;
-	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
-	text-align: center;
-	font-family: Inter;
-	font-size: 20px;
-	font-style: normal;
-	font-weight: 800;
-	line-height: normal;
+    // box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+    // text-align: center;
+    font-size: 20px;
+    // font-style: normal;
+    font-weight: 800;
+    // line-height: normal;
+    color: #05294b;
+    border: 1px solid #05294b;
+
 }

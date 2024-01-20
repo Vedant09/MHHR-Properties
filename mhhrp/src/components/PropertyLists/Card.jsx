@@ -2,6 +2,7 @@ import React from "react"
 import BathImg from '../../assets/images/bath.png';
 import BedImg from '../../assets/images/bed.png';
 import LocImg from '../../assets/images/location.png';
+import OutlinedButton from "../common/Button";
 
 export default function Card(props) {
     let badgeText
@@ -34,7 +35,8 @@ export default function Card(props) {
                     <span className="card--price">{props.item.price}</span>
                     <span className="per-month"> / MO</span>
                 </p>
-                <button className="button-comp">More Info</button>
+                {/* <button className="button-comp">More Info</button> */}
+                <OutlinedButton btnTitle="More Info" className="button-comp"/>
             </div>
         </div>
     )
