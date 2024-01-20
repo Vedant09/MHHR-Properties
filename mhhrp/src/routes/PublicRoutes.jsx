@@ -8,19 +8,19 @@ const ContactUsComponent = lazy(() => import('../components/ContactUs'))
 const NotFoundComponent = lazy(() => import('../components/PageNotFound'))
 const PropertyDetails = lazy(() => import('../components/PropertyDetails'));
 const PropertyForms = lazy(() => import('../components/PropertyForms'))
+const PropertyLists = lazy(() => import('../components/PropertyLists'));
 
 const PublicRoutes = () => {
     return (
         <React.Suspense>
             <Routes>
                 <Route path={'/'} element={<HomeComponent />} />
-                {/* <Route path={RoutePaths.home} element={<HomeComponent />} /> */}
                 <Route path={RoutePaths.aboutUs} element={<AboutUsComponent />} />
                 <Route path={RoutePaths.contactUs} element={<ContactUsComponent />} />
-
-                <Route path="*" element={<NotFoundComponent />} />
                 <Route path={RoutePaths.propertyDetails} element={<PropertyDetails />} />
                 <Route path={RoutePaths.addPropertyForm} element={<PropertyForms />} />
+                <Route path={RoutePaths.propertyLists} element={<PropertyLists />} />
+                <Route path="*" element={<NotFoundComponent />} />
             </Routes>
         </React.Suspense>
     );
