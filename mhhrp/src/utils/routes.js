@@ -4,7 +4,8 @@ const RoutePaths = {
     aboutUs: '/about-us',
     contactUs: '/contact-us',
     propertyDetails: "/property-details",
-    addPropertyForm: "/forms"
+    addPropertyForm: "/forms",
+    propertyLists: '/property-lists',
 
     // private
 };
