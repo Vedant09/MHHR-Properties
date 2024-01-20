@@ -34,10 +34,9 @@ export default function Card(props) {
       </div>
       <div className="card-button">
         <p>
-          <span className="card--price">{props.item.price}</span>
+          <span className="card--price">${props.item.price}</span>
           <span className="per-month"> / MO</span>
         </p>
-        {/* <button className="button-comp">More Info</button> */}
         <NavLink to={RoutePaths.propertyDetails} className="card-nav-link">
           <OutlinedButton btnTitle="More Info" className="button-comp" />
         </NavLink>

@@ -1,5 +1,4 @@
 import React from "react";
-// import Header from "../Header";
 import { PropertyListData } from "./data";
 import Card from "./Card";
 
