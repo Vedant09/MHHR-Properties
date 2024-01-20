@@ -1,4 +1,5 @@
 import React from "react";
+import OutlinedButton from "../common/Button";
 
 const Footer = () => {
   return (
@@ -7,7 +8,11 @@ const Footer = () => {
       <div className="header-text">Join Our Mailing List</div>
       <div className="content-text">Be the first to hear about new listings or how to list your property with us.</div>
       <div className="input-container">
-
+        <input
+        placeholder="Email"
+        className="input-field"
+        />
+        <OutlinedButton btnTitle={"Sign up"} className="button"/>
       </div>
       </div>
 

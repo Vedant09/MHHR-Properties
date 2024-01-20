@@ -27,6 +27,30 @@
 
         .input-container{
             display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+
+            input::placeholder{
+                color: $white;
+                // opacity: 1;
+            }
+
+            .input-field{
+                flex: 4;
+                height: 42.5px;
+                border: 0;
+                outline: none;
+                background-color: transparent;
+                border-bottom: 1px solid $white;
+                margin-right: 25px;
+
+            }
+
+            .button{
+                flex: 1;
+                margin: 0;
+            }
             
         }
     }
