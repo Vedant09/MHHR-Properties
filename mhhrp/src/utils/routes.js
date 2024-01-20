@@ -3,8 +3,10 @@ const RoutePaths = {
     home: '/home',
     aboutUs: '/about-us',
     contactUs: '/contact-us',
+    propertyDetails: "/property-details",
+    addPropertyForm: "/forms"
 
-     // private
+    // private
 };
 
 

@@ -5,7 +5,7 @@ const PrivateRoutes = () => {
     <div>
       
     </div>
-  )
-}
+  );
+};
 
 export default PrivateRoutes
