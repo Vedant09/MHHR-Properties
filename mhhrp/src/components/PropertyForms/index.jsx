@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import OutlinedButton from '../common/Button';
 
 const PropertyForm = () => {
   const [propertyData, setPropertyData] = useState({
@@ -6,9 +7,9 @@ const PropertyForm = () => {
     name: '',
     address: '',
     description: '',
-    bathrooms: 0,
-    beds: 0,
-    price: 0,
+    bathrooms: '',
+    beds: '',
+    price: '',
     utilities: [],
     amenities: [],
   });
@@ -23,13 +24,14 @@ const PropertyForm = () => {
     setPropertyData((prevData) => ({ ...prevData, images: files }));
   };
 
-  const handleUtilitiesChange = (e) => {
+  const handleAddUtility = (e) => {
     const { value } = e.target;
     setPropertyData((prevData) => ({
       ...prevData,
       utilities: [...prevData.utilities, value],
     }));
   };
+
 
   const handleAmenitiesChange = (e) => {
     const { value } = e.target;
@@ -41,51 +43,70 @@ const PropertyForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add your logic to submit the data to the server
     console.log('Property Data:', propertyData);
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Images:
-        <input type="file" multiple onChange={handleImageUpload} />
-      </label>
-      <br />
-      <label>
-        Name of the Property:
-        <input type="text" name="name" value={propertyData.name} onChange={handleInputChange} />
-      </label>
-      <br />
-      <label>
-        Address:
-        <input type="text" name="address" value={propertyData.address} onChange={handleInputChange} />
-      </label>
-      <br />
-      <label>
-        Description:
-        <textarea name="description" value={propertyData.description} onChange={handleInputChange} />
-      </label>
-      <br />
-      <label>
-        Bathrooms:
-        <input type="number" name="bathrooms" value={propertyData.bathrooms} onChange={handleInputChange} />
-      </label>
-      <br />
-      <label>
-        Beds:
-        <input type="number" name="beds" value={propertyData.beds} onChange={handleInputChange} />
-      </label>
-      <br />
-      <label>
-        Price:
-        <input type="number" name="price" value={propertyData.price} onChange={handleInputChange} />
-      </label>
-      <br />
-      <label>
-        Add Utilities:
-        <input type="text"  />
-        <button type="button" onClick={handleUtilitiesChange}>
+    <div className='property-forms-div'>
+      <div className="add-property-header">
+        <p className="header">Add Property</p>
+      </div>
+      <form className='forms-div'>
+        <input
+          type="text"
+          placeholder='Name of the Property'
+          className="input-field"
+          name="name" v
+          alue={propertyData.name}
+          onChange={handleInputChange} />
+        <br />
+        <input
+          type="text"
+          placeholder='Address'
+          className="input-field"
+          name="address"
+          value={propertyData.address}
+          onChange={handleInputChange} />
+        <br />
+        <textarea
+          name="description"
+          placeholder='Description'
+          className="input-field textarea"
+          value={propertyData.description}
+          onChange={handleInputChange} />
+        <br />
+        <input
+          type="number"
+          placeholder='Bathrooms'
+          className="input-field"
+          name="bathrooms"
+          value={propertyData.bathrooms}
+          onChange={handleInputChange} />
+        <br />
+        <input
+          type="number"
+          placeholder='Beds'
+          className="input-field"
+          name="beds"
+          value={propertyData.beds}
+          onChange={handleInputChange} />
+        <br />
+        <input
+          type="number"
+          placeholder='Price'
+          className="input-field"
+          name="price"
+          value={propertyData.price}
+          onChange={handleInputChange} />
+        <br />
+
+        <input
+          type="text"
+          placeholder='Add Utilities'
+          className="input-field"
+          onChange={handleAddUtility}
+        />
+        <button type="button" onClick={handleAddUtility}>
           Add
         </button>
         <ul>
@@ -93,11 +114,14 @@ const PropertyForm = () => {
             <li key={index}>{utility}</li>
           ))}
         </ul>
-      </label>
-      <br />
-      <label>
-        Add Amenities:
-        <input type="text" onChange={handleAmenitiesChange} />
+
+
+        <input
+          type="text"
+          placeholder='Add Amenities'
+          className="input-field"
+          onChange={handleAmenitiesChange}
+        />
         <button type="button" onClick={handleAmenitiesChange}>
           Add
         </button>
@@ -106,10 +130,16 @@ const PropertyForm = () => {
             <li key={index}>{amenity}</li>
           ))}
         </ul>
-      </label>
-      <br />
-      <button type="submit">Submit</button>
-    </form>
+        <label>
+          Images : <br />
+          <input type="file" multiple onChange={handleImageUpload} />
+        </label>
+        <br />
+        <div className='submit-button-container'>
+          <OutlinedButton onClick={handleSubmit} btnTitle='Submit' className='submit-button' />
+        </div>
+      </form>
+    </div>
   );
 };
 
