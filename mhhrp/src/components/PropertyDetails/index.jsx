@@ -1,4 +1,5 @@
 import React from 'react'
+import OutlinedButton from '../common/Button';
 import ImageCarousel from './ImageCarousel';
 import PropertyContent from './PropertyContent'
 
@@ -19,7 +20,7 @@ const index = () => {
                     <PropertyContent/>
                 </div>
                 <div className='button-container'>
-                <button className='apply-button'>Apply</button>
+                <OutlinedButton btnTitle='Apply' className='apply-button'/>
                 </div>
             </div>
 
