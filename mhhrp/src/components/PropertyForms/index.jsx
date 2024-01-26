@@ -14,6 +14,9 @@ const PropertyForm = () => {
     amenities: [],
   });
 
+  const[tempUtilities,setTempUtilities] = useState('')
+  const[tempAmenities,settempAmenities] = useState('')
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setPropertyData((prevData) => ({ ...prevData, [name]: value }));
@@ -25,20 +28,19 @@ const PropertyForm = () => {
   };
 
   const handleAddUtility = (e) => {
-    const { value } = e.target;
-    setPropertyData((prevData) => ({
-      ...prevData,
-      utilities: [...prevData.utilities, value],
-    }));
+    setPropertyData({
+      ...propertyData,
+      utilities:[...propertyData.utilities,tempUtilities]})
+      setTempUtilities('')
   };
 
 
   const handleAmenitiesChange = (e) => {
-    const { value } = e.target;
-    setPropertyData((prevData) => ({
-      ...prevData,
-      amenities: [...prevData.amenities, value],
-    }));
+    setPropertyData({
+      ...propertyData,
+      amenities:[...propertyData.amenities,tempAmenities]
+    })
+    settempAmenities('')
   };
 
   const handleSubmit = (e) => {
@@ -104,7 +106,8 @@ const PropertyForm = () => {
           type="text"
           placeholder='Add Utilities'
           className="input-field"
-          onChange={handleAddUtility}
+          value={tempUtilities}
+          onChange = { (e) => setTempUtilities(e.target.value)}
         />
         <button type="button" onClick={handleAddUtility}>
           Add
@@ -120,7 +123,8 @@ const PropertyForm = () => {
           type="text"
           placeholder='Add Amenities'
           className="input-field"
-          onChange={handleAmenitiesChange}
+          value={tempAmenities}
+          onChange={(e)=>settempAmenities(e.target.value)}
         />
         <button type="button" onClick={handleAmenitiesChange}>
           Add
