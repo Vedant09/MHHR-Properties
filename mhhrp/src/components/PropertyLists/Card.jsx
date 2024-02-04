@@ -8,8 +8,10 @@ import { RoutePaths } from "../../utils/routes";
 
 export default function Card(props) {
 
-  const badgeText = props.item.available ? "AVAILABLE" : "SOLD OUT";
-  const styles = { color: props.item.available ? "#008000" : "#FF0000" };
+  const {item} = props;
+
+  const badgeText = item.available ? "AVAILABLE" : "SOLD OUT";
+  const styles = { color: item.available ? "#008000" : "#FF0000" };
 
   return (
     <div className="card">
@@ -18,23 +20,23 @@ export default function Card(props) {
           {badgeText}
         </div>
       )}
-      <img src={props.item.coverImg} className="card--image" alt="property" />
+      <img src={item?.images[0]} className="card--image" alt="property" />
       <div className="card--stats">
-        <p className="card--title">{props.item.title}</p>
+        <p className="card--title">{item.name}</p>
         <div>
           <img src={LocImg} className="card--icon" alt="address-icon" />
-          <span className="card--address">{props.item.address}</span>
+          <span className="card--address">{item.address}</span>
         </div>
         <div className="card--info">
           <img src={BathImg} className="card--icon" alt="bath-icon" />
-          <span className="gray"> {props.item.stats.bed} Bed </span>
+          <span className="gray"> {item.bedrooms} Bed </span>
           <img src={BedImg} className="card--icon" alt="bed-icon" />
-          <span className="gray"> {props.item.stats.bath} Bath</span>
+          <span className="gray"> {item.bathrooms} Bath</span>
         </div>
       </div>
       <div className="card-button">
         <p>
-          <span className="card--price">${props.item.price}</span>
+          <span className="card--price">${item.rent}</span>
           <span className="per-month"> / MO</span>
         </p>
         <NavLink to={RoutePaths.propertyDetails} className="card-nav-link">
