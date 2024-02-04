@@ -5,6 +5,7 @@ import OutlinedButton from "../common/Button";
 import { NavLink } from "react-router-dom";
 import { RoutePaths } from "../../utils/routes";
 import { getAllProperties } from "../../api/properties";
+import Filter from "./Filter"
 
 const PropertyList = () => {
   const [propertiesData, setPropertiesData] = useState([]);
@@ -37,6 +38,9 @@ const PropertyList = () => {
             btnTitle="Add Property"
           />
         </NavLink>
+      </div>
+      <div>
+        <Filter/>
       </div>
       <section className="cards-list">{cards}</section>
       {error ? <p className="error-message">{error}</p> : null}

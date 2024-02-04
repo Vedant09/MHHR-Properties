@@ -150,3 +150,45 @@
         font-size: $font-size-ml;
     }
 }
+
+
+.filter{
+    //width:50px;
+    height: calc(100vh - 161px - 161px);
+    margin-bottom: 161px;
+    overflow: auto;
+    max-width: 260px;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: #cce1f0;
+    box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.1);;
+}
+
+.filter-button{
+    margin-top: auto;
+    background-color: #05294b;
+    color: antiquewhite;
+    justify-content: center;
+    align-items: center;
+    width: 208px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    border: 1px solid #05294b !important;
+}
+.filter-component{
+    display: flex;
+    flex-direction: column;
+    //background-color: $gray;
+}
+.filter-header{
+    text-align: center;
+    color: #05294b;
+    font-size: 25px;
+    font-weight: 800;
+
+}
