@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import OutlinedButton from "../common/Button";
+import { Close } from "../../assets/icons";
 
 const PropertyForm = () => {
   const [propertyData, setPropertyData] = useState({
@@ -35,12 +36,51 @@ const PropertyForm = () => {
     } else if (value === "others" && name === "utilities") {
       setShowUtilitiesInput(true);
     } else {
-      setPropertyData((prevData) => ({
-        ...prevData,
-        [name]: [...prevData[name], value],
-      }));
+      if (name === "amenities" && propertyData?.amenities?.includes(value)) {
+        let tempAmenities = [...propertyData?.amenities];
+        const index = tempAmenities?.findIndex((ele) => ele === value);
+        tempAmenities?.splice(index, 1);
+
+        setPropertyData((prevData) => ({
+          ...prevData,
+          [name]: [...tempAmenities],
+        }));
+      } else if (
+        name === "utilities" &&
+        propertyData?.utilities?.includes(value)
+      ) {
+        let tempUtilities = [...propertyData?.utilities];
+        const index = tempUtilities?.findIndex((ele) => ele === value);
+        tempUtilities?.splice(index, 1);
+
+        setPropertyData((prevData) => ({
+          ...prevData,
+          [name]: [...tempUtilities],
+        }));
+      } else {
+        setPropertyData((prevData) => ({
+          ...prevData,
+          [name]: [...prevData[name], value],
+        }));
+      }
     }
   };
+
+  const handleRemoveTempUtilities = (utility) => {
+    let tempUtilities = [...otherUtilities];
+    const index = tempUtilities?.findIndex((ele) => ele === utility);
+    tempUtilities?.splice(index, 1);
+
+    setOtherUtilities(tempUtilities)
+  }
+
+  const handleRemoveTempAmenities = (amenity) => {
+    let tempAmenities = [...otherAmenities];
+    const index = tempAmenities?.findIndex((ele) => ele === amenity);
+    tempAmenities?.splice(index, 1);
+
+    setOtherAmenities(tempAmenities)
+  }
 
   const handleImageUpload = (e) => {
     const files = e.target.files;
@@ -234,10 +274,29 @@ const PropertyForm = () => {
               Add
             </button>
 
-            {console.log(propertyData, "propertyData")}
+           
             <ul>
               {otherAmenities?.map((amenity, index) => (
-                <li key={index}>{amenity}</li>
+                <div className="others-list">
+                <li key={index} className="text">
+                  {amenity}
+                </li>
+                {/* <Close/> */}
+                <img
+                  src={Close}
+                  className="icon"
+                  alt="close"
+                  onClick={() => {
+                    handleCheckboxInputChange({
+                      target: {
+                        name: "amenities",
+                        value: amenity,
+                      },
+                    });
+                    handleRemoveTempAmenities(amenity)
+                  }}
+                />
+              </div>
               ))}
             </ul>
           </>
@@ -261,7 +320,7 @@ const PropertyForm = () => {
               value="lawn"
               onChange={handleCheckboxInputChange}
             />
-           Lawn
+            Lawn
           </label>
           <label>
             <input
@@ -300,7 +359,7 @@ const PropertyForm = () => {
             />
             Oven
           </label> */}
-          
+
           <label>
             <input
               type="checkbox"
@@ -327,8 +386,27 @@ const PropertyForm = () => {
             </button>
 
             <ul>
-              {otherUtilities?.map((amenity, index) => (
-                <li key={index}>{amenity}</li>
+              {otherUtilities?.map((utility, index) => (
+                <div className="others-list">
+                  <li key={index} className="text">
+                    {utility}
+                  </li>
+                  {/* <Close/> */}
+                  <img
+                    src={Close}
+                    className="icon"
+                    alt="close"
+                    onClick={() => {
+                      handleCheckboxInputChange({
+                        target: {
+                          name: "utilities",
+                          value: utility,
+                        },
+                      });
+                      handleRemoveTempUtilities(utility)
+                    }}
+                  />
+                </div>
               ))}
             </ul>
           </>
