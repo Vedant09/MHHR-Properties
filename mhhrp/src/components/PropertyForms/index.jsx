@@ -142,19 +142,6 @@ const PropertyForm = () => {
             onChange={handleInputChange}
           />
         </div>
-        <br />
-
-        <div className="input-container">
-          <p className="input-header">Address</p>
-          <input
-            type="text"
-            placeholder="Address"
-            className="input-field"
-            name="address"
-            value={propertyData.address}
-            onChange={handleInputChange}
-          />
-        </div>
 
         <br />
         <div className="input-container">
@@ -185,6 +172,59 @@ const PropertyForm = () => {
               onChange={handleCheckboxInputChange}
             />
             Unavailable
+          </label>
+        </div>
+        <br />
+        <div className="input-container">
+          <p className="input-header">Address</p>
+          <input
+            type="text"
+            placeholder="Address"
+            className="input-field"
+            name="address"
+            value={propertyData.address}
+            onChange={handleInputChange}
+          />
+        </div>
+
+        <br />
+        <div className="input-container">
+          <p className="input-header">House Type</p>
+          <label>
+            <input
+              type="checkbox"
+              name="housetypes"
+              value="independenttownhouse"
+              onChange={handleCheckboxInputChange}
+            />
+            Independent Townhouse
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              name="housetypes"
+              value="apartments"
+              onChange={handleCheckboxInputChange}
+            />
+            Apartments
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              name="housetypes"
+              value="singlefamilyhouse"
+              onChange={handleCheckboxInputChange}
+            />
+            Single-Family House
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              name="housetypes"
+              value="condominium"
+              onChange={handleCheckboxInputChange}
+            />
+            Condominium
           </label>
         </div>
         <br />
