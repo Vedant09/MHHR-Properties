@@ -39,10 +39,14 @@ const PropertyList = () => {
           />
         </NavLink>
       </div>
+      <div className="maincontent">
       <div>
         <Filter/>
       </div>
+      <div>
       <section className="cards-list">{cards}</section>
+      </div>
+      </div>
       {error ? <p className="error-message">{error}</p> : null}
     </div>
   );

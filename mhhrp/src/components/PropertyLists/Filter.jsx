@@ -32,6 +32,7 @@ const Filter = () => {
       className="filter"
     >
       <h2 className="filter-header">Filters</h2>
+      <div className="filter-scrollable">
       <div className="filter-component">
         <h3>Types of House</h3>
         <label>
@@ -158,7 +159,7 @@ const Filter = () => {
           4
         </label>
       </div>
-      <div className="filter-component">
+      <div className="filter-component filter-last">
         <h3>Availability</h3>
         <label>
           <input
@@ -188,6 +189,7 @@ const Filter = () => {
           Sold Out
         </label>
       </div >
+      </div>
       <button className="filter-button" onClick={applyFilters}>Apply</button>
     </div>
   );
