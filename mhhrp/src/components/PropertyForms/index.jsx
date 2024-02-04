@@ -13,6 +13,7 @@ const PropertyForm = () => {
     price: "",
     utilities: [],
     amenities: [],
+    housetypes: [],
   });
 
   const [tempUtilities, setTempUtilities] = useState("");
@@ -22,6 +23,7 @@ const PropertyForm = () => {
   const [otherAmenities, setOtherAmenities] = useState([]);
   const [showUtilitiesInput, setShowUtilitiesInput] = useState(false);
   const [otherUtilities, setOtherUtilities] = useState([]);
+
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -57,6 +59,18 @@ const PropertyForm = () => {
           ...prevData,
           [name]: [...tempUtilities],
         }));
+      } else if (
+        name === "housetypes" &&
+        propertyData?.housetypes?.includes(value)
+      ) {
+        let tempHouseTypes = [...propertyData?.housetypes];
+        const index = tempHouseTypes?.findIndex((ele) => ele === value);
+        tempHouseTypes?.splice(index, 1);
+
+        setPropertyData((prevData) => ({
+          ...prevData,
+          [name]: [...tempHouseTypes],
+        }))
       } else {
         setPropertyData((prevData) => ({
           ...prevData,
@@ -140,8 +154,48 @@ const PropertyForm = () => {
             onChange={handleInputChange}
           />
         </div>
-        <br />
 
+        <br />
+        <div className="input-container">
+          <p className="input-header">House Type</p>
+          <label>
+            <input
+              type="checkbox"
+              name="housetypes"
+              value="independenttownhouse"
+              onChange={handleCheckboxInputChange}
+            />
+            Independent Townhouse
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              name="housetypes"
+              value="apartments"
+              onChange={handleCheckboxInputChange}
+            />
+            Apartments
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              name="housetypes"
+              value="singlefamilyhouse"
+              onChange={handleCheckboxInputChange}
+            />
+            Single-Family House
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              name="housetypes"
+              value="condominium"
+              onChange={handleCheckboxInputChange}
+            />
+            Condominium
+          </label>
+        </div>
+        <br />
         <div className="input-container">
           <p className="input-header">Description</p>
           <textarea
@@ -274,29 +328,29 @@ const PropertyForm = () => {
               Add
             </button>
 
-           
+
             <ul>
               {otherAmenities?.map((amenity, index) => (
                 <div className="others-list">
-                <li key={index} className="text">
-                  {amenity}
-                </li>
-                {/* <Close/> */}
-                <img
-                  src={Close}
-                  className="icon"
-                  alt="close"
-                  onClick={() => {
-                    handleCheckboxInputChange({
-                      target: {
-                        name: "amenities",
-                        value: amenity,
-                      },
-                    });
-                    handleRemoveTempAmenities(amenity)
-                  }}
-                />
-              </div>
+                  <li key={index} className="text">
+                    {amenity}
+                  </li>
+                  {/* <Close/> */}
+                  <img
+                    src={Close}
+                    className="icon"
+                    alt="close"
+                    onClick={() => {
+                      handleCheckboxInputChange({
+                        target: {
+                          name: "amenities",
+                          value: amenity,
+                        },
+                      });
+                      handleRemoveTempAmenities(amenity)
+                    }}
+                  />
+                </div>
               ))}
             </ul>
           </>
