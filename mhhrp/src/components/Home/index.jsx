@@ -1,7 +1,6 @@
 import React from "react";
 // import AboutUs from "../AboutUs/index";
 import { HomeBackground } from "../../assets/images";
-import Footer from "../Footer";
 import OutlinedButton from "../common/Button";
 import Information from "../Information";
 import { NavLink } from "react-router-dom";
@@ -30,8 +29,7 @@ const Home = () => {
       </div>
 
       <Information />
-
-      <Footer />
+     
     </div>
   );
 };

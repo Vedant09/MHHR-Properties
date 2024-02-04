@@ -23,8 +23,8 @@ const index = () => {
                 <OutlinedButton btnTitle='Apply' className='apply-button'/>
                 </div>
             </div>
-
         </div>
+        
     );
 };
 

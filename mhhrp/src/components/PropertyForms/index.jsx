@@ -14,6 +14,7 @@ const PropertyForm = () => {
     utilities: [],
     amenities: [],
     housetypes: [],
+    availability: ""
   });
 
   const [tempUtilities, setTempUtilities] = useState("");
@@ -157,42 +158,33 @@ const PropertyForm = () => {
 
         <br />
         <div className="input-container">
-          <p className="input-header">House Type</p>
+          <p className="input-header">Availability</p>
           <label>
             <input
-              type="checkbox"
-              name="housetypes"
-              value="independenttownhouse"
+              type="radio"
+              name="availability"
+              value="available"
               onChange={handleCheckboxInputChange}
             />
-            Independent Townhouse
+            Available
           </label>
           <label>
             <input
-              type="checkbox"
-              name="housetypes"
-              value="apartments"
+              type="radio"
+              name="availability"
+              value="comingsoon"
               onChange={handleCheckboxInputChange}
             />
-            Apartments
+            Coming Soon
           </label>
           <label>
             <input
-              type="checkbox"
-              name="housetypes"
-              value="singlefamilyhouse"
+              type="radio"
+              name="availability"
+              value="unavailable"
               onChange={handleCheckboxInputChange}
             />
-            Single-Family House
-          </label>
-          <label>
-            <input
-              type="checkbox"
-              name="housetypes"
-              value="condominium"
-              onChange={handleCheckboxInputChange}
-            />
-            Condominium
+            Unavailable
           </label>
         </div>
         <br />
