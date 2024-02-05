@@ -9,9 +9,15 @@ export const addProperty = (data) => {
 };
 
 export const getAllProperties = () => {
-    return httpClient({
-      method: "GET",
-      url: "/properties/get-all-properties",
-    });
-  };
-  
+  return httpClient({
+    method: "GET",
+    url: "/properties/get-all-properties",
+  });
+};
+
+export const getPropertyDetailsById = (id) => {
+  return httpClient({
+    method: "GET",
+    url: `/properties/get-details/${id}`,
+  });
+};
