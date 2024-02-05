@@ -4,8 +4,8 @@ import ImageCarousel from './ImageCarousel';
 import PropertyContent from './PropertyContent'
 
 
+const PropertyDetails = () => {
 
-const index = () => {
     return (
         <div className='property-details-component'>
             <div className='property-images'>
@@ -28,4 +28,4 @@ const index = () => {
     );
 };
 
-export default index;
+export default PropertyDetails;

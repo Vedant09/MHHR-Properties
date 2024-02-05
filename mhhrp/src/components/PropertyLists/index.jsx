@@ -43,7 +43,7 @@ const PropertyList = () => {
       <div>
         <Filter/>
       </div>
-      <div>
+      <div style={{flex: "4"}}>
       <section className="cards-list">{cards}</section>
       </div>
       </div>

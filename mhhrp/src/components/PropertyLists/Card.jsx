@@ -5,13 +5,14 @@ import LocImg from "../../assets/images/location.png";
 import OutlinedButton from "../common/Button";
 import { NavLink } from "react-router-dom";
 import { RoutePaths } from "../../utils/routes";
+import { PropertyAvailableColor, PropertyAvailableList } from "../../utils/properties";
 
 export default function Card(props) {
+  const { item } = props;
 
-  const {item} = props;
+  const badgeText = PropertyAvailableList[item.availability]
 
-  const badgeText = item.available ? "AVAILABLE" : "SOLD OUT";
-  const styles = { color: item.available ? "#008000" : "#FF0000" };
+  const styles = { color: PropertyAvailableColor[item.availability] };
 
   return (
     <div className="card">
@@ -39,7 +40,8 @@ export default function Card(props) {
           <span className="card--price">${item.rent}</span>
           <span className="per-month"> / MO</span>
         </p>
-        <NavLink to={RoutePaths.propertyDetails} className="card-nav-link">
+
+        <NavLink to={RoutePaths.propertyDetails} state={{id: item?.id}} className="card-nav-link">
           <OutlinedButton btnTitle="More Info" className="button-comp" />
         </NavLink>
       </div>
