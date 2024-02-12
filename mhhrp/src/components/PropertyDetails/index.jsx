@@ -30,8 +30,14 @@ const PropertyDetails = () => {
 
     return (
         <div className='property-details-component'>
-            <div className='property-images'>
-                <ImageCarousel />
+            <div className='video-frame'>
+                <iframe
+                    width="600"
+                    height="550"
+                    src="https://www.youtube.com/embed/htjq0Qj9zVI"
+                    frameborder="0"
+                    allowfullscreen
+                ></iframe>
             </div>
             <div className='property-info'>
                 <div className='property-address'>
@@ -39,7 +45,7 @@ const PropertyDetails = () => {
                     <p className='content'>{propertyDetail.address}</p>
                 </div>
                 <div className='property-content'>
-                    <PropertyContent data={propertyDetail}/>
+                    <PropertyContent data={propertyDetail} />
                 </div>
                 <div className='button-container'>
                     <OutlinedButton btnTitle='Apply' className='apply-button' />
