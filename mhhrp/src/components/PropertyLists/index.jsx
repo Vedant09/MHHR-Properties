@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { PropertyListData } from "./data";
+// import { PropertyListData } from "./data";
 import Card from "./Card";
 import OutlinedButton from "../common/Button";
 import { NavLink } from "react-router-dom";
 import { RoutePaths } from "../../utils/routes";
 import { getAllProperties } from "../../api/properties";
-import Filter from "./Filter"
+import Filter from "./Filter";
 
 const PropertyList = () => {
   const [propertiesData, setPropertiesData] = useState([]);
   const [error, setError] = useState("");
+  const isValidated = localStorage.getItem("isValidated");
 
   const getAllPropertiesData = async () => {
     try {
@@ -32,20 +33,25 @@ const PropertyList = () => {
   return (
     <div className="mainbody">
       <div className="add-property-button-container">
-        <NavLink to={RoutePaths.addPropertyForm} className="property-nav-link">
-          <OutlinedButton
-            className="button-property-comp"
-            btnTitle="Add Property"
-          />
-        </NavLink>
+        {isValidated ? (
+          <NavLink
+            to={RoutePaths.addPropertyForm}
+            className="property-nav-link"
+          >
+            <OutlinedButton
+              className="button-property-comp"
+              btnTitle="Add Property"
+            />
+          </NavLink>
+        ) : null}
       </div>
       <div className="maincontent">
-      <div>
-        <Filter/>
-      </div>
-      <div style={{flex: "4"}}>
-      <section className="cards-list">{cards}</section>
-      </div>
+        <div>
+          <Filter />
+        </div>
+        <div style={{ flex: "4" }}>
+          <section className="cards-list">{cards}</section>
+        </div>
       </div>
       {error ? <p className="error-message">{error}</p> : null}
     </div>

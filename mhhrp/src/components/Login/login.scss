@@ -1,0 +1,51 @@
+.login-component {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    // justify-content: space-around;
+    padding: 50px auto 20px;
+
+    .login-header {
+        padding: 25px 0px;
+        margin: 0 50px 100px;
+        display: flex;
+        width: calc(100% - 100px);
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid $gray;
+
+        .header {
+            font-size: $font-size-xl;
+            text-transform: uppercase;
+            // font-weight: $font-weight-bold;
+        }
+    }
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    justify-content: center;
+    align-items: center ;
+    margin: 50px auto;
+    
+    .sub-header{
+        font-size: $font-size-xl;
+        text-transform: uppercase;
+    }
+
+    .input-container{
+        height: 50px;
+        padding: 10px 15px;
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .button{
+        width: 50%;
+        border: 1px solid $black;
+        margin-top: 40px;
+    }
+
+}

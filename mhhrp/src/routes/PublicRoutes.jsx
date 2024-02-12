@@ -1,5 +1,5 @@
 import React, { lazy } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import { RoutePaths } from "../utils/routes";
 import Navbar from "../components/Header";
 import Footer from "../components/Footer";
@@ -11,11 +11,17 @@ const NotFoundComponent = lazy(() => import("../components/PageNotFound"));
 const PropertyDetails = lazy(() => import("../components/PropertyDetails"));
 const PropertyForms = lazy(() => import("../components/PropertyForms"));
 const PropertyLists = lazy(() => import("../components/PropertyLists"));
+const Login = lazy(() => import("../components/Login"));
 
 const PublicRoutes = () => {
+
+    const location = useLocation();
+    console.log(location, "location")
+
   return (
     <div>
-      <Navbar />
+      {location?.pathname !== RoutePaths.login ? <Navbar /> : null}
+
       <React.Suspense>
         <Routes>
           <Route path={"/"} element={<HomeComponent />} />
@@ -31,9 +37,13 @@ const PublicRoutes = () => {
           />
           <Route path={RoutePaths.propertyLists} element={<PropertyLists />} />
           <Route path="*" element={<NotFoundComponent />} />
+
+          <Route path={RoutePaths.login} element={<Login/>} />
+
         </Routes>
       </React.Suspense>
-      <Footer />
+
+      {location?.pathname !== RoutePaths.login ? <Footer /> : null}
     </div>
   );
 };
