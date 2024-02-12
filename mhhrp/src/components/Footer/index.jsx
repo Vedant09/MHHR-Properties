@@ -1,5 +1,5 @@
 import React from "react";
-import OutlinedButton from "../common/Button";
+// import OutlinedButton from "../common/Button";
 
 const Footer = () => {
   return (

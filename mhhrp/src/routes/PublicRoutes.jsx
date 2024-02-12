@@ -1,35 +1,41 @@
-import React, { lazy } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import React, { lazy } from "react";
+import { Route, Routes } from "react-router-dom";
 import { RoutePaths } from "../utils/routes";
-import Navbar from '../components/Header';
-import Footer from '../components/Footer';
+import Navbar from "../components/Header";
+import Footer from "../components/Footer";
 
-const HomeComponent = lazy(() => import('../components/Home'));
-const AboutUsComponent = lazy(() => import('../components/AboutUs'));
-const ContactUsComponent = lazy(() => import('../components/ContactUs'))
-const NotFoundComponent = lazy(() => import('../components/PageNotFound'))
-const PropertyDetails = lazy(() => import('../components/PropertyDetails'));
-const PropertyForms = lazy(() => import('../components/PropertyForms'))
-const PropertyLists = lazy(() => import('../components/PropertyLists'));
+const HomeComponent = lazy(() => import("../components/Home"));
+const AboutUsComponent = lazy(() => import("../components/AboutUs"));
+const ContactUsComponent = lazy(() => import("../components/ContactUs"));
+const NotFoundComponent = lazy(() => import("../components/PageNotFound"));
+const PropertyDetails = lazy(() => import("../components/PropertyDetails"));
+const PropertyForms = lazy(() => import("../components/PropertyForms"));
+const PropertyLists = lazy(() => import("../components/PropertyLists"));
 
 const PublicRoutes = () => {
-    return (
-        <div>
-            <Navbar />
-        <React.Suspense>
-            <Routes>
-                <Route path={'/'} element={<HomeComponent />} />
-                <Route path={RoutePaths.aboutUs} element={<AboutUsComponent />} />
-                <Route path={RoutePaths.contactUs} element={<ContactUsComponent />} />
-                <Route path={RoutePaths.propertyDetails} element={<PropertyDetails />} />
-                <Route path={RoutePaths.addPropertyForm} element={<PropertyForms />} />
-                <Route path={RoutePaths.propertyLists} element={<PropertyLists />} />
-                <Route path="*" element={<NotFoundComponent />} />
-            </Routes>
-        </React.Suspense>
-            <Footer/>
-        </div>
-    );
-}
+  return (
+    <div>
+      <Navbar />
+      <React.Suspense>
+        <Routes>
+          <Route path={"/"} element={<HomeComponent />} />
+          <Route path={RoutePaths.aboutUs} element={<AboutUsComponent />} />
+          <Route path={RoutePaths.contactUs} element={<ContactUsComponent />} />
+          <Route
+            path={RoutePaths.propertyDetails}
+            element={<PropertyDetails />}
+          />
+          <Route
+            path={RoutePaths.addPropertyForm}
+            element={<PropertyForms />}
+          />
+          <Route path={RoutePaths.propertyLists} element={<PropertyLists />} />
+          <Route path="*" element={<NotFoundComponent />} />
+        </Routes>
+      </React.Suspense>
+      <Footer />
+    </div>
+  );
+};
 
 export default PublicRoutes;
