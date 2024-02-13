@@ -38,7 +38,7 @@ const Login = () => {
       <div className="login-header">
         <p className="header">MHHR Properties</p>
       </div>
-      <div className="info-container">
+      <div className="login-info-container">
         <p className="sub-header">Login</p>
 
         <input
